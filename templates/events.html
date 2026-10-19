@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Lista de Eventos</h2>
+{% if erro %}<p class="error">{{ erro }}</p>{% endif %}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Categoria</th>
+        <th>Data</th>
+        <th>Local</th>
+        <th>Responsável</th>
+        <th>Ações</th>
+    </tr>
+    {% for e in eventos %}
+    <tr>
+        <td>{{ e.id_evento }}</td>
+        <td>{{ e.nome_evento }}</td>
+        <td>{{ e.categoria }}</td>
+        <td>{{ e.data_evento }}</td>
+        <td>{{ e.local_evento }}</td>
+        <td>{{ e.responsavel }}</td>
+        <td>
+            <a href="{{ url_for('editar_evento', id=e.id_evento) }}">Editar</a>
+            <form action="{{ url_for('excluir_evento', id=e.id_evento) }}" method="POST" style="display:inline;">
+                <button type="submit" class="btn-danger" onclick="return confirm('Deseja excluir?')">Excluir</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

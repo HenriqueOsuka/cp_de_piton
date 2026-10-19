@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EventTech - Gestão de Eventos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>EventTech - Sistema de Gestão de Eventos</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Início</a>
+            <a href="{{ url_for('listar_eventos') }}">Gerenciar Eventos</a>
+            <a href="{{ url_for('cadastrar_evento') }}">Novo Evento</a>
+            <a href="{{ url_for('api_eventos') }}" target="_blank">API JSON</a>
+        </nav>
+    </header>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>

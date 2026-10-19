@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Bem-vindo ao EventTech</h2>
+<p>Sistema corporativo para gerenciamento completo de eventos, integrando dados locais e externos.</p>
+
+<h3>Próximos Feriados Nacionais (Dados da API Externa)</h3>
+<ul>
+    {% for f in feriados %}
+    <li><strong>{{ f.date }}</strong>: {{ f.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %} 
