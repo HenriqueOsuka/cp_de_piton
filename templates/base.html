@@ -18,6 +18,11 @@
         </nav>
     </header>
     <div class="container">
+                {% with mensagens = get_flashed_messages(with_categories=true) %}
+            {% for categoria, msg in mensagens %}
+                <p class="msg {{ categoria }}">{{ msg }}</p>
+            {% endfor %}
+        {% endwith %}
         {% block content %}{% endblock %}
     </div>
 </body>

@@ -1,14 +1,10 @@
+import os
 import oracledb
 
+
 def conectar_banco():
-    try:
-        # Substitua pelas suas credenciais reais do Oracle
-        connection = oracledb.connect(
-            user="seu_usuario",
-            password="sua_senha",
-            dsn="localhost:1521/XE"
-        )
-        return connection
-    except Exception as e:
-        print(f"Erro ao conectar ao banco de dados Oracle: {e}")
-        raise e
+    return oracledb.connect(#informações do banco de dados (sigilosas)
+        user=os.getenv("ORACLE_USER", "RM571324"),
+        password=os.getenv("ORACLE_PASSWORD", "250208"),
+        dsn=os.getenv("ORACLE_DSN", "oracle.ficap.com.br")
+    )

@@ -4,6 +4,9 @@
 <p>Sistema corporativo para gerenciamento completo de eventos, integrando dados locais e externos.</p>
 
 <h3>Próximos Feriados Nacionais (Dados da API Externa)</h3>
+{% if erro_api %}
+<p class="error">{{ erro_api }}</p>
+{% endif %}
 <ul>
     {% for f in feriados %}
     <li><strong>{{ f.date }}</strong>: {{ f.name }}</li>

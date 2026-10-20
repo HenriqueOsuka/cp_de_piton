@@ -16,10 +16,10 @@
     <input type="text" name="local_evento" value="{{ evento.local_evento }}" required>
 
     <label>Capacidade:</label>
-    <input type="number" name="capacidade" value="{{ evento.capacidade }}" required>
+    <input type="number" min="1" name="capacidade" value="{{ evento.capacidade }}" required>
 
     <label>Valor do Ingresso (R$):</label>
-    <input type="number" step="0.01" name="valor_ingresso" value="{{ evento.valor_ingresso }}">
+    <input type="number" step="0.01" name="valor_ingresso" value="{{ evento.valor_ingresso or 0 }}" min="0">
 
     <label>Responsável:</label>
     <input type="text" name="responsavel" value="{{ evento.responsavel }}" required>

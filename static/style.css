@@ -87,3 +87,24 @@ button:hover {
     color: #c0392b;
     font-weight: bold;
 }
+
+.msg {
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.msg.sucesso {
+    background-color: #d4efdf;
+    color: #1e8449;
+}
+
+.msg.erro {
+    background-color: #f9d6d5;
+    color: #c0392b;
+}
+
+.msg.aviso {
+    background-color: #fdebd0;
+    color: #b9770e;
+}
